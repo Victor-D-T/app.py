@@ -6,8 +6,7 @@ import os
 @st.cache_data
 
 def carregar_dados():
-    print(os.getcwd(), 'Escola', 'Financeiro', 'python', 'dash')
-    xlsx = pd.ExcelFile(os.path.join(os.getcwd(), 'Escola', 'Financeiro', 'python', 'dash', "pesquisa.xlsx"))
+    xlsx = pd.ExcelFile(os.path.join(os.getcwd(), "pesquisa.xlsx"))
     df_list = []
     for unidade in xlsx.sheet_names:
         df = pd.read_excel(xlsx, sheet_name=unidade)

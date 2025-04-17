@@ -2,13 +2,14 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 import os 
-# Carregar os dados
-@st.cache_data
 
 def carregar_dados():
     current_dir = os.path.dirname(os.path.abspath(__file__))
     file_path = os.path.join(current_dir, "pesquisa.xlsx")
     xlsx = pd.ExcelFile(file_path)
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(current_dir, "pesquisa.xlsx")
+    xlsx = pd.ExcelFile(file_path)    
     df_list = []
     for unidade in xlsx.sheet_names:
         df = pd.read_excel(xlsx, sheet_name=unidade)
